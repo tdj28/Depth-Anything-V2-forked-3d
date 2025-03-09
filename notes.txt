@@ -1,0 +1,25 @@
+python video_to_pointcloud.py --encoder vits --load-from ./checkpoints/depth_anything_v2_vits.pth --max-depth 20 --video-path /home/d7082791602/Dropbox/security_camera1.mp4 --outdir output_directory --focal-length-x 470.4 --focal-length-y 470.4 --save-ply --filter-outliers
+
+
+output_directory/ply/frame_000000.ply
+
+
+python visualize_pointcloud.py --input output_directory/ply/frame_000000.ply --show-coordinate-frame
+
+
+python visualize_pointcloud_matplotlib.py --input output_directory/ply/frame_000000.ply --point-size 0.5 --max-points 100000 --save-image test.png
+
+##########
+
+python video_to_pointcloud.py --auto-detect-encoder --load-from ./checkpoints/depth_anything_v2_vits.pth --max-depth 20 --video-path /home/d7082791602/Dropbox/security_camera1.mp4 --outdir output_directory --focal-length-x 470.4 --focal-length-y 470.4 --save-ply --keep-all-points
+
+python visualize_pointcloud_matplotlib.py --input output_directory/ply/frame_000000.ply --view natural --zoom 2.0 --undistort --undistort-strength 0.6
+
+################
+
+
+python video_to_pointcloud.py --auto-detect-encoder --load-from ./checkpoints/depth_anything_v2_vits.pth --max-depth 20 --video-path /home/d7082791602/Dropbox/security_camera1.mp4 --outdir output_directory --focal-length-x 470.4 --focal-length-y 470.4 --save-ply --keep-all-points --point-density high
+
+
+
+python visualize_pointcloud_matplotlib.py --input output_directory/ply/frame_000000.ply --view natural --max-points 500000 --save-image --zoom 2.0 --undistort --undistort-strength 0.6 --clean-view --bg-color "0.1,0.1,1"

@@ -1,0 +1,9 @@
+checkpoints/
+output_directory/
+PYCACHE/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
